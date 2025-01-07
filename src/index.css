@@ -67,24 +67,21 @@ button:focus-visible {
   }
 }
  */
- @tailwind base;
- @tailwind components;
- @tailwind utilities;
- 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 .footer {
-  padding:15px;
-  background-image: url('./assets/bg-Footer.png'), url('./assets/Footer.png');
+  padding: 15px;
+  background-image: url("./assets/bg-Footer.png"), url("./assets/Footer.png");
   background-size: cover, cover;
   background-position: center, center;
-  background-repeat: no-repeat, no-repeat; 
-  position: relative; 
-
-
+  background-repeat: no-repeat, no-repeat;
+  position: relative;
 }
 .footer::before {
   content: "";
-  background-image: url('./assets/bg-Footer.png');
+  background-image: url("./assets/bg-Footer.png");
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -98,3 +95,14 @@ button:focus-visible {
   -webkit-filter: opacity(0.9);
 }
 
+@font-face {
+  font-family: "Vazir";
+  src: url("/public/fonts/Vazir.woff2") format("woff2"),
+    url("/public/fonts/Vazir.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Vazir", sans-serif;
+}
