@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -66,3 +66,35 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+ */
+ @tailwind base;
+ @tailwind components;
+ @tailwind utilities;
+ 
+
+.footer {
+  padding:15px;
+  background-image: url('./assets/bg-Footer.png'), url('./assets/Footer.png');
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat; 
+  position: relative; 
+
+
+}
+.footer::before {
+  content: "";
+  background-image: url('./assets/bg-Footer.png');
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: opacity(0.9);
+  z-index: -1;
+  -webkit-filter: opacity(0.6);
+  -webkit-filter: opacity(0.9);
+}
+
