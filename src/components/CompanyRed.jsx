@@ -4,15 +4,19 @@ import PricingCard from "./PricingCard";
 import svg1 from "../assets/1.svg";
 import svg2 from "../assets/2.svg";
 import svg3 from "../assets/3.svg";
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Pagination, Navigation } from "swiper/modules";
 const CompanyRed = () => {
   return (
     <div>
       <Header />
-      <section className="bg-red-500 text-white py-16">
-        <div className="container mx-auto text-center">
+      <section className="bg-red-600 text-white py-16">
+        <div className="container mx-auto  text-center">
           <h1 className="text-4xl font-bold mb-4">به سایت رد سرور خوش آمدید</h1>
-          <p className="text-lg mb-6">
+          <p className="text-lg m-6">
             رد سرور یک بستر مناسب برای عبور از فیلترینگ با سرعت بالا، بدون قطعی
             و با نازل‌ترین قیمت.
           </p>
@@ -25,11 +29,11 @@ const CompanyRed = () => {
       {/* Main Content */}
 
       <div className="bg-gray-100">
-        <div className="container mx-auto space-y-10 flexs justify-around m-auto">
+        <div className="container mx-auto space-y-10 flexs justify-between m-auto w-4/5">
           {/* سطر 1: SVG سمت راست */}
 
           <div className="flex flex-col md:flex-row items-center md:items-start gap-6 ">
-            <div className="w-full flex items-center justify-around">
+            <div className="w-full flex items-center justify-between">
               <div className="text ">
                 <h2 className="text-2xl font-bold text-red-600 mb-2">
                   سرعت بالا و قیمت مناسب
@@ -43,13 +47,13 @@ const CompanyRed = () => {
                   بهترین قیمت سرور را در اختیار شما قرار می‌دهد.{" "}
                 </p>
               </div>
-              <img className="" src={svg1} />
+              <img className="pt-4 hidden md:block" src={svg1} />
             </div>
           </div>
 
           {/* سطر 2: SVG سمت چپ */}
           <div className="flex flex-col md:flex-row items-center md:items-start gap-6 ">
-            <div className="w-full flex items-center justify-around flex-row-reverse">
+            <div className="w-full flex items-center justify-between flex-row-reverse">
               <div className="text ">
                 <h2 className="text-2xl font-bold text-red-600 mb-2">
                   اپلیکیشن اختصاصی و مصرف نیم‌بها
@@ -64,14 +68,14 @@ const CompanyRed = () => {
                   سایت‌ها و اپلیکیشن‌های ایرانی به صورت نیم‌بها حساب می‌شود.
                 </p>
               </div>
-              <img className="" src={svg2} />
+              <img className="hidden md:block" src={svg2} />
             </div>
           </div>
         </div>
 
         {/* سطر 3: SVG سمت چپ */}
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-6 ">
-          <div className="w-full flex items-center justify-around">
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-6  w-4/5 m-auto">
+          <div className="w-full flex items-center justify-between">
             <div className="text ">
               <h2 className="text-2xl font-bold text-red-600 mb-2">
                 ایپی ثابت و پشتیبانی
@@ -85,67 +89,169 @@ const CompanyRed = () => {
                 تا در صورت بروز مشکل آن را به سرعت رفع کند.
               </p>
             </div>
-            <img className="" src={svg3} />
+            <img className="hidden md:block" src={svg3} />
           </div>
         </div>
       </div>
 
-      <div>
-        {/* این قسمت قراره بگیره */}
-        <div className="bg-gray-100 py-16">
-          <div className="container mx-auto px-4 flex justify-center gap-10 max-2xl:flex-nowrap max-xl:flex-wrap">
-            <div className="max-w-sm w-full">
-              <PricingCard
-                title="3 ماه حجم 120 گیگ"
-                type="حرفه‌ای"
-                price="۲۴۰,۰۰۰"
-                features={[
-                  "سرعت پایدار",
-                  "آی‌پی ثابت",
-                  "پشتیبانی پس از فروش",
-                  "قیمت مناسب",
-                ]}
-              />
-            </div>
-            <div className="max-w-sm w-full">
-              <PricingCard
-                title="3 ماه حجم 120 گیگ"
-                type="V2RAY"
-                price="۲۴۰,۰۰۰"
-                features={[
-                  "سرعت پایدار",
-                  "آی‌پی ثابت",
-                  "پشتیبانی پس از فروش",
-                  "قیمت مناسب",
-                ]}
-              />
-            </div>
-            <div className="max-w-sm w-full">
-              <PricingCard
-                title="6 ماه حجم 240 گیگ"
-                type="اقتصادی"
-                price="۴۵۰,۰۰۰"
-                features={[
-                  "سرعت عالی",
-                  "آی‌پی ثابت",
-                  "پشتیبانی فوری",
-                  "قیمت مناسب",
-                ]}
-              />
-            </div>
-            <div className="max-w-sm w-full">
-              <PricingCard
-                title="12 ماه حجم 500 گیگ"
-                type="پیشرفته"
-                price="۹۵۰,۰۰۰"
-                features={[
-                  "سرعت فوق‌العاده",
-                  "آی‌پی دائمی",
-                  "پشتیبانی 24/7",
-                  "قیمت ویژه",
-                ]}
-              />
-            </div>
+      <div className="w-full bg-gray-100 flex justify-center">
+        <div className=" bg-gray-100 py-10 flex flex-col w-4/5 ">
+          <div>
+            <h2 className="text-2xl font-bold text-center text-black my-10">
+              سرویس اپلیکیشن نامحدود رد سرور برای اندروید{" "}
+            </h2>
+          </div>
+          <div className="container mx-auto gap-10 ">
+            <Swiper
+              slidesPerView={4}
+              spaceBetween={30}
+              pagination={{ clickable: true }}
+              navigation
+              modules={[Pagination, Navigation]}
+              className="mySwiper"
+              breakpoints={{
+                1536: { slidesPerView: 4, spaceBetween: 30 }, // 2xl
+                1280: { slidesPerView: 4, spaceBetween: 30 }, // lg
+                1024: { slidesPerView: 3, spaceBetween: 20 }, // md
+                768: { slidesPerView: 2, spaceBetween: 15 }, // sm
+                640: { slidesPerView: 1, spaceBetween: 10 }, // xs
+                0: { slidesPerView: 1, spaceBetween: 10 },
+              }}
+            >
+              <SwiperSlide>
+                <PricingCard
+                  title="3 ماه حجم 120 گیگ"
+                  type="حرفه‌ای"
+                  price="۲۴۰,۰۰۰"
+                  features={[
+                    "سرعت پایدار",
+                    "آی‌پی ثابت",
+                    "پشتیبانی پس از فروش",
+                    "قیمت مناسب",
+                  ]}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <PricingCard
+                  title="3 ماه حجم 120 گیگ"
+                  type="V2RAY"
+                  price="۲۴۰,۰۰۰"
+                  features={[
+                    "سرعت پایدار",
+                    "آی‌پی ثابت",
+                    "پشتیبانی پس از فروش",
+                    "قیمت مناسب",
+                  ]}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <PricingCard
+                  title="6 ماه حجم 240 گیگ"
+                  type="اقتصادی"
+                  price="۴۵۰,۰۰۰"
+                  features={[
+                    "سرعت عالی",
+                    "آی‌پی ثابت",
+                    "پشتیبانی فوری",
+                    "قیمت مناسب",
+                  ]}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <PricingCard
+                  title="12 ماه حجم 500 گیگ"
+                  type="پیشرفته"
+                  price="۹۵۰,۰۰۰"
+                  features={[
+                    "سرعت فوق‌العاده",
+                    "آی‌پی دائمی",
+                    "پشتیبانی 24/7",
+                    "قیمت ویژه",
+                  ]}
+                />
+              </SwiperSlide>
+            </Swiper>
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full bg-gray-100 flex justify-center">
+        <div className=" bg-gray-100 py-10 flex flex-col w-4/5 ">
+          <div>
+            <h2 className="text-2xl font-bold text-center text-black my-10">
+              سرویس حجمی v2ray برای اندروید - آیفون - ویندوز
+            </h2>
+          </div>
+          <div className="container mx-auto gap-10 ">
+            <Swiper
+              slidesPerView={4}
+              spaceBetween={30}
+              pagination={{ clickable: true }}
+              navigation
+              modules={[Pagination, Navigation]}
+              className="mySwiper"
+              breakpoints={{
+                1536: { slidesPerView: 4, spaceBetween: 30 }, // 2xl
+                1280: { slidesPerView: 4, spaceBetween: 30 }, // lg
+                1024: { slidesPerView: 3, spaceBetween: 20 }, // md
+                768: { slidesPerView: 2, spaceBetween: 15 }, // sm
+                640: { slidesPerView: 1, spaceBetween: 10 }, // xs
+                0: { slidesPerView: 1, spaceBetween: 10 },
+              }}
+            >
+              <SwiperSlide>
+                <PricingCard
+                  title="3 ماه حجم 120 گیگ"
+                  type="حرفه‌ای"
+                  price="۲۴۰,۰۰۰"
+                  features={[
+                    "سرعت پایدار",
+                    "آی‌پی ثابت",
+                    "پشتیبانی پس از فروش",
+                    "قیمت مناسب",
+                  ]}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <PricingCard
+                  title="3 ماه حجم 120 گیگ"
+                  type="V2RAY"
+                  price="۲۴۰,۰۰۰"
+                  features={[
+                    "سرعت پایدار",
+                    "آی‌پی ثابت",
+                    "پشتیبانی پس از فروش",
+                    "قیمت مناسب",
+                  ]}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <PricingCard
+                  title="6 ماه حجم 240 گیگ"
+                  type="اقتصادی"
+                  price="۴۵۰,۰۰۰"
+                  features={[
+                    "سرعت عالی",
+                    "آی‌پی ثابت",
+                    "پشتیبانی فوری",
+                    "قیمت مناسب",
+                  ]}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <PricingCard
+                  title="12 ماه حجم 500 گیگ"
+                  type="پیشرفته"
+                  price="۹۵۰,۰۰۰"
+                  features={[
+                    "سرعت فوق‌العاده",
+                    "آی‌پی دائمی",
+                    "پشتیبانی 24/7",
+                    "قیمت ویژه",
+                  ]}
+                />
+              </SwiperSlide>
+            </Swiper>
           </div>
         </div>
       </div>
@@ -156,3 +262,7 @@ const CompanyRed = () => {
 };
 
 export default CompanyRed;
+
+{
+  /* */
+}

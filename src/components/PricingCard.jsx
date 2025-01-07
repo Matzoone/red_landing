@@ -3,18 +3,16 @@ import coin from "../assets/Coin.png";
 
 const PricingCard = ({ title, type, price, features }) => {
   return (
-    <div className="bg-white shadow-lg rounded-3xl p-6 w-full max-w-lg flex flex-col items-center">
+    <div className="bg-white shadow-lg rounded-3xl p-6 my-6 w-full max-w-lg max-lg:max-w-80 max-xl:max-w-96 flex flex-col items-center max-md:mr-32 max-sm:mr-5">
       {/* برچسب */}
       <div className="w-full">
         <div className="flex justify-between -mt-12 ">
           <div className="flex justify-start">
-            <img className="mt-16 size-10" src={coin} />
+            <img className="mt-16 pb-5 " src={coin} />
           </div>
           <div className="flex justify-end mr-24 w-full">
-            {/* <img className="w-full -ml-10" src={tag} />
-            <p className="relative left-11 top-6">{type}</p> */}
-            <span className="flex justify-center w-full -mt-1">
-              <img className="w-full relative right-6 top-2" src={tag} />
+            <span className="flex justify-center w-full -mt-2">
+              <img className="w-full relative right-6 top-1 " src={tag} />
               <span className="absolute text-white text-xs font-black mt-8 mr-12">
                 {type}
               </span>
