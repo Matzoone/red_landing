@@ -5,11 +5,9 @@ import icon2 from "../assets/icon (2).png";
 
 const Footer = () => {
   return (
-    <footer className="footer text-white">
-      <div className="container mx-auto px-4 my-6">
-
+    <footer className="footer text-white ">
+      <div className="container mx-auto w-4/5 px-6 my-6">
         <div className="w-full flex flex-col md:flex-row justify-between items-center p-4 border border-gray-600 rounded-xl gap-6">
-
           <div className="flex items-center md:w-1/3 justify-center md:justify-start text-center md:text-right">
             <div className="flex items-center gap-4">
               <img src={icon} alt="Phone Icon" className="w-8 h-8" />
@@ -46,8 +44,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-right items-center mt-8">
-          <div className="px-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-right items-center mt-2 w-4/5">
+          <div className="">
             <p className="text-gray-300 text-sm leading-6">
               اکسیژن با رویکرد اعتماد به مشتری، با در اختیار داشتن متنوع‌ترین
               سرورها متشکل از انواع آی‌پی‌های اقتصادی تا تجاری در سراسر کشور
@@ -88,7 +86,7 @@ const Footer = () => {
               />
               <button
                 type="submit"
-                className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-l-lg"
+                className="px-6 py-2 bg-red-600 hover:bg-red-700 text-white rounded-l-lg"
               >
                 ارسال
               </button>
