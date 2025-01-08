@@ -1,4 +1,5 @@
 import {
+  ArrowTurnLeftDownIcon,
   DocumentDuplicateIcon,
   LinkIcon,
   ShieldExclamationIcon,
@@ -67,9 +68,10 @@ function SuccessPage() {
             <div className="gap-4 grid max-md:m-auto m-auto">
               <label
                 htmlFor="user"
-                className="text-green-700 font-medium text-lg w-28"
+                className="text-green-700 font-medium text-lg w-28 flex"
               >
-                نام کاربری:
+                نام کاربری
+                <ArrowTurnLeftDownIcon width={24} />
               </label>
               <div className="flex items-center gap-6">
                 <input
@@ -90,12 +92,13 @@ function SuccessPage() {
                 </button>
               </div>
             </div>
-            <div className="gap-4 grid max-md:m-auto m-auto m-auto">
+            <div className="gap-4 grid max-md:m-auto m-auto">
               <label
                 htmlFor="pass"
-                className="text-green-700 font-medium text-lg w-28"
+                className="text-green-700 font-medium text-lg w-28 flex"
               >
-                رمز عبور:
+                رمز عبور
+                <ArrowTurnLeftDownIcon width={24} />
               </label>
               <div className="flex items-center gap-6">
                 <input
@@ -124,9 +127,9 @@ function SuccessPage() {
             <div className="gap-4 grid max-md:m-auto m-auto">
               <label
                 htmlFor="config"
-                className="text-green-700 font-medium text-lg w-28"
+                className="text-green-700 font-medium text-lg w-28 flex"
               >
-                کانفیگ :
+                کانفیگ <ArrowTurnLeftDownIcon width={24} />
               </label>
               <div className="flex items-center gap-6">
                 <input
@@ -152,8 +155,6 @@ function SuccessPage() {
           </div>
         )}
       </div>
-
-      {/* <div className="flex !mt-28 justify-center h-12 rounded-2xl hover: items-center bg-green-500 w-1/3 m-auto"> */}
       <div className="w-[44%] flex justify-between m-auto items-center md:!mt-40 max-md:!mt-16 max-md:flex-col">
         <div className="w-auto flex flex-col items-start gap-6">
           <button
