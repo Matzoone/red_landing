@@ -6,7 +6,7 @@ import icon2 from "../assets/icon (2).png";
 const Footer = () => {
   return (
     <footer className="footer text-white ">
-      <div className="container mx-auto w-4/5 px-6 my-6">
+      <div className="container mx-auto w-4/5 my-6">
         <div className="w-full flex flex-col md:flex-row justify-between items-center p-4 border border-gray-600 rounded-xl gap-6">
           <div className="flex items-center md:w-1/3 justify-center md:justify-start text-center md:text-right">
             <div className="flex items-center gap-4">
