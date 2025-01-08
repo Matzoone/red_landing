@@ -1,75 +1,191 @@
-import { useNavigate } from "react-router";
+import {
+  DocumentDuplicateIcon,
+  LinkIcon,
+  ShieldExclamationIcon,
+  SparklesIcon,
+} from "@heroicons/react/16/solid";
+import { Link, useNavigate } from "react-router";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function SuccessPage() {
+  const randomNumber = Math.floor(Math.random() * 100) + 1;
+  const trueOrFalse = randomNumber % 2 !== 0 ? true : false;
+
   const navigate = useNavigate();
+  const config = [
+    {
+      user: "kjasfkshfjs",
+      pass: "123456",
+      config: "hdfjashfiuafsafasfnskjhvilsgfihkbvyigvklsdasdgfishdflsafdsafsaf",
+    },
+  ];
+
+  const copyToClipboard = (text, field) => {
+    let fieldMessage;
+
+    if (field === "user") {
+      fieldMessage = "یوزرنیم کپی شد !";
+    } else if (field === "pass") {
+      fieldMessage = "پسوورد کپی شد !";
+    } else if (field === "config") {
+      fieldMessage = "کانفیگ کپی شد !";
+    } else {
+      fieldMessage = "محتوا کپی شد !";
+    }
+
+    navigator.clipboard.writeText(text).then(() => {
+      toast.success(fieldMessage, {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    });
+  };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 p-4">
-      <div className="max-w-md w-full bg-white shadow-xl rounded-3xl p-8 text-center relative">
-        <div className="absolute top-[-20px] left-1/2 transform -translate-x-1/2 w-16 h-16 bg-green-500 text-white flex items-center justify-center rounded-full shadow-lg">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="2"
-            stroke="currentColor"
-            className="w-8 h-8"
+    <div>
+      <div className="bg-green-50 text font-extrabold text-7xl text-green-500 h-52 flex items-center justify-center md:hidden">
+        <SparklesIcon width={80} className="text-green-400" />
+        <p className="w-min"> تراکنش موفق</p>
+      </div>
+      <div className="bg-green-50 text font-extrabold text-7xl text-green-500 h-80 flex items-center justify-center max-md:hidden">
+        <SparklesIcon width={80} className="text-green-400" /> تراکنش موفق
+      </div>
+      {/* /// */}
+      <div className="flex justify-center mt-10">
+        <div className="w-[448px] flex justify-center max-md:hidden">
+          <ShieldExclamationIcon className="w-60 text-green-500 ml-[111px]" />
+        </div>
+        {!trueOrFalse && (
+          <div className="flex flex-col items-start justify-center gap-6 mt-8 w-[448px] max-w-md">
+            <div className="gap-4 grid max-md:m-auto m-auto">
+              <label
+                htmlFor="user"
+                className="text-green-700 font-medium text-lg w-28"
+              >
+                نام کاربری:
+              </label>
+              <div className="flex items-center gap-6">
+                <input
+                  name="user"
+                  value={config[0].user}
+                  readOnly
+                  className="flex-1 px-4 py-2 text-lg border-b border-green-500 text-gray-800 rounded-lg shadow-md focus:ring-2 focus:outline-none"
+                  onClick={(e) => e.target.select()}
+                />
+                <button
+                  onClick={() => copyToClipboard(config[0].user, "user")}
+                  className="text-green-500"
+                >
+                  <DocumentDuplicateIcon
+                    title="کپی"
+                    className="w-8 h-8 text-green-500"
+                  />
+                </button>
+              </div>
+            </div>
+            <div className="gap-4 grid max-md:m-auto m-auto m-auto">
+              <label
+                htmlFor="pass"
+                className="text-green-700 font-medium text-lg w-28"
+              >
+                رمز عبور:
+              </label>
+              <div className="flex items-center gap-6">
+                <input
+                  name="pass"
+                  value={config[0].pass}
+                  readOnly
+                  type="password"
+                  className="flex-1 px-4 py-2 text-lg border-b border-green-500 text-gray-800 rounded-lg shadow-md focus:ring-2 focus:outline-none"
+                  onClick={(e) => e.target.select()}
+                />
+                <button
+                  onClick={() => copyToClipboard(config[0].pass, "pass")}
+                  className="text-green-500"
+                >
+                  <DocumentDuplicateIcon
+                    title="کپی"
+                    className="w-8 h-8 text-green-500"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+        {trueOrFalse && (
+          <div className="flex flex-col items-start justify-center gap-6 mt-8 w-[448px] max-w-md">
+            <div className="gap-4 grid max-md:m-auto m-auto">
+              <label
+                htmlFor="config"
+                className="text-green-700 font-medium text-lg w-28"
+              >
+                کانفیگ :
+              </label>
+              <div className="flex items-center gap-6">
+                <input
+                  name="config"
+                  value={config[0].config}
+                  readOnly
+                  type="text"
+                  className="flex-1 px-4 py-2 text-lg border-b border-green-500 text-gray-800 rounded-lg shadow-md focus:outline-none focus:ring-0"
+                  onClick={(e) => e.target.select()}
+                />
+
+                <button
+                  onClick={() => copyToClipboard(config[0].pass, "config")}
+                  className="text-white"
+                >
+                  <DocumentDuplicateIcon
+                    title="کپی"
+                    className="w-8 h-8 text-green-500"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* <div className="flex !mt-28 justify-center h-12 rounded-2xl hover: items-center bg-green-500 w-1/3 m-auto"> */}
+      <div className="w-[44%] flex justify-between m-auto items-center md:!mt-40 max-md:!mt-16 max-md:flex-col">
+        <div className="w-auto flex flex-col items-start gap-6">
+          <button
+            onClick={() => navigate("/")}
+            className="px-6 py-3 text-lg font-bold text-white bg-green-500 rounded-lg shadow-lg hover:bg-green-600 focus:ring-2 focus:ring-green-300 focus:outline-none transition-transform transform hover:scale-105"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-            />
-          </svg>
-        </div>
-        <h1 className="text-3xl font-bold text-gray-800 mb-4 mt-8">Success</h1>
-        <p className="text-gray-600 mb-6">
-          Your operation was completed successfully. Below are your account
-          details:
-        </p>
-
-        <div className="space-y-6">
-          <div>
-            <label className="block text-left text-gray-700 font-medium mb-2">
-              Username
-            </label>
-            <input
-              type="text"
-              value="JohnDoe"
-              readOnly
-              className="w-full border border-gray-300 rounded-lg p-3 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-400"
-            />
-          </div>
-          <div>
-            <label className="block text-left text-gray-700 font-medium mb-2">
-              Password
-            </label>
-            <input
-              type="password"
-              value="********"
-              readOnly
-              className="w-full border border-gray-300 rounded-lg p-3 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-400"
-            />
-          </div>
-        </div>
-
-        <button
-          onClick={() => navigate("/")}
-          className="mt-8 w-full bg-green-500 text-white py-3 px-6 rounded-lg text-lg font-medium shadow-md hover:bg-green-600 transition duration-300"
-        >
-          Back to Home
-        </button>
-
-        <div className="mt-8 border-t pt-6 text-left">
-          <h2 className="text-lg font-semibold text-gray-800 mb-2">
-            Customer Support
-          </h2>
-          <p className="text-gray-600 text-sm">
-            If you need any assistance, our support team is available 24/7.
-            Contact us via email or phone and we will be happy to help.
+            بازگشت به صفحه اصلی
+          </button>
+          <p className="text-slate-300 text-xs max-w-[218px] max-md:hidden">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis ad
           </p>
         </div>
+        <div className="w-[48%] flex max-md:flex-col-reverse max-md:items-center">
+          <div className="w-[54%] max-md:mt-10 max-md:w-[170%]">
+            <ul className="list-disc flex flex-col max-md:justify-between max-md:!flex-row">
+              <li>ما خوبی</li>
+              <li>عالی ایم</li>
+              <li className="max-md:hidden">خداییم</li>
+              <li className="max-md:hidden">بهتر از ما نداریم</li>
+              <li className="max-md:hidden">میتونی برس</li>
+            </ul>
+          </div>
+
+          <a
+            href=""
+            className="w-[25%] bg-green-500 text-white font-bold rounded-2xl items-center justify-center flex h-10 mt-[6px] hover:scale-110 transition bg max-md:!rounded-lg max-md:w-[175px]"
+          >
+            پشتیبانی
+          </a>
+        </div>
       </div>
+      <ToastContainer />
     </div>
   );
 }
