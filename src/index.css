@@ -130,3 +130,14 @@ button:focus-visible {
   background-position: right;
   background-position-x: 1400px;
 }
+@font-face {
+  font-family: "Vazir";
+  src: url("/public/fonts/Vazir.woff2") format("woff2"),
+    url("/public/fonts/Vazir.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Vazir", sans-serif;
+}
