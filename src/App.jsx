@@ -1,5 +1,4 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router";
-import "./output.css";
 import CompanyRed from "./components/CompanyRed";
 import ProductPage from "./components/PDP";
 import SuccessPage from "./components/success";

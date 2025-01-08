@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
+  mode: "jit", // فعال کردن JIT Mode
+  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   theme: {
     extend: {
       fontFamily: {
