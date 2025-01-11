@@ -3,7 +3,7 @@ import coin from "../assets/Coin.png";
 
 const PricingCard = ({ title, type, price, features }) => {
   return (
-    <div className="bg-white shadow-lg rounded-3xl p-6 my-6 w-full max-w-lg  max-lg:max-w-80 max-md:max-w-64 max-md:mr-7">
+    <div className="bg-white shadow-lg rounded-3xl p-6 my-6 w-full max-w-lg  max-lg:max-w-80 max-md:max-w-64 m-auto">
       {/* برچسب */}
       <div className="w-full">
         <div className="flex justify-between -mt-12 ">

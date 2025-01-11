@@ -8,7 +8,7 @@ const ProductPage = () => {
     navigate("/");
   };
   return (
-    <div className=" h-screen bg-red-200 pt-52 max-md:pt-4 max-md:h-screen">
+    <div className=" h-screen bg-red-200 pt-20 max-md:pt-4 max-md:h-screen">
       <div className="m-auto w-[55%] max-md:w-[95%]">
         <button
           onClick={handleBackClick}
@@ -24,15 +24,15 @@ const ProductPage = () => {
             <div className="text-4xl font-bold text-white">
               همین حالا VPN خودتو بگیر!
             </div>
-            <div className="text-white mt-8 text-base font-normal max-md:mb-4">
+            <div className="text-white mt-8 text-base max-lg:text-sm font-normal max-md:mb-4">
               دیگه نگران محدودیت‌های اینترنت نباش! با وی‌پی‌ان سریع و امن ما
               می‌تونی به راحتی به هر چیزی که می‌خواهی دسترسی پیدا کنی، بدون هیچ
               دردسری. امنیت آنلاین‌ت هم با ما تضمینه، پس با خیال راحت وب‌گردی
               کن.
             </div>
           </div>
-          <div className="w-full">
-            <div className=" bg-green-600 max-md:w-auto w-fit rounded-2xl h-fit py-3 px-6 text-white mb-4 mx-auto">
+          <div className="w-full max-lg:hidden">
+            <div className=" bg-green-600 max-md:w-auto w-fit rounded-2xl h-fit py-3 px-6 text-white mb-4 mx-auto ">
               پشتیبانی 24 ساعته
             </div>
           </div>
@@ -58,13 +58,13 @@ const ProductPage = () => {
                 type="email"
                 id="email"
                 placeholder="exaple@gmail.com"
-                className="px-4 py-2 transition rounded-lg focus:outline-none focus:ring-2 focus:ring-red-300 focus:border-red-500 text-gray-700 w-64"
+                className="px-4 py-2 transition rounded-lg focus:outline-none focus:ring-2 focus:ring-red-300 focus:border-red-500 text-gray-700 w-full ml-10 "
               />
             </div>
             <div className="mt-14 text-sm text-slate-100 bg-green-500 py-3 rounded-2xl flex items-center justify-center md:hidden">
               پشتیبانی 24 ساعته
             </div>
-            <div className="mt-[70px] text-sm text-slate-600 justify-center max-md:hidden mr-4">
+            <div className="mt-[70px] text-sm text-slate-600 justify-center max-lg:hidden mr-4">
               <ul className="list-disc flex gap-8">
                 <li>sghl</li>
                 <li>o,fd</li>

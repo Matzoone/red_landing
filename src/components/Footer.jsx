@@ -44,7 +44,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-right items-center mt-2 w-4/5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6  text-center md:text-right items-center mt-2 w-full">
           <div className="">
             <p className="text-gray-300 text-sm leading-6">
               اکسیژن با رویکرد اعتماد به مشتری، با در اختیار داشتن متنوع‌ترین
@@ -78,15 +78,15 @@ const Footer = () => {
 
           <div className="flex flex-col items-center md:items-start px-6 ">
             <h5 className="text-lg font-semibold mb-4 text-white">خبرنامه</h5>
-            <form className="flex items-center w-full max-w-sm flex-row">
+            <form className="flex items-center  max-w-sm flex-row max-md:ml-8">
               <input
                 type="email"
                 placeholder="ایمیل خود را وارد کنید"
-                className="flex-grow px-4 py-2 rounded-r-lg border border-gray-600 bg-gray-800 text-gray-200 focus:outline-none"
+                className="flex-grow px-4 py-2 rounded-r-lg border border-gray-600 bg-gray-800 text-gray-200 focus:outline-none w-3/5"
               />
               <button
                 type="submit"
-                className="px-6 py-2 bg-red-600 hover:bg-red-700 text-white rounded-l-lg"
+                className="px-6 py-2 bg-red-600 hover:bg-red-700 text-white rounded-l-lg "
               >
                 ارسال
               </button>
@@ -94,9 +94,9 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="text-right text-sm mt-6 border-t border-gray-600 pt-6">
+        <div className="text-right text-sm mt-4 border-t border-gray-600 ">
           <p className="text-md text-[#9A9A9A]">
-            &copy;تمامی حقوق این وبسایت متعلق به اکسیس می‌باشد
+            &copy;تمامی حقوق این وبسایت متعلق به اکسیژن می‌باشد
           </p>
         </div>
       </div>
