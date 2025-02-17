@@ -2,86 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.footer {
-  padding: 15px;
-  background-image: url("./assets/bg-Footer.png"), url("./assets/Footer.png");
-  background-size: cover, cover;
-  background-position: center, center;
-  background-repeat: no-repeat, no-repeat;
-  position: relative;
-  width:109%;
-}
-
-.footer::before {
-  content: "";
-  background-image: url("./assets/bg-Footer.png");
-  background-size: cover;
-  background-position: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  filter: opacity(0.9);
-  z-index: -1;
-  -webkit-filter: opacity(0.6);
-  -webkit-filter: opacity(0.9);
-}
-
-
-
-/* موقعیت دکمه‌های ناوبری */
-.mySwiper .swiper-button-next,
-.mySwiper .swiper-button-prev {
-  top: 50%;
-  /* قرارگیری در مرکز عمودی */
-  transform: translateY(-50%);
-  width: 40px !important;
-  /* اندازه دلخواه */
-  height: 40px !important;
-  background-color: rgba(248, 2, 2, 0.5);
-  /* رنگ پس‌زمینه */
-  border-radius: 50%;
-  /* گرد کردن دکمه‌ها */
-  z-index: 10;
-  /* اولویت بالاتر از اسلایدها */
-}
-
-/* آیکون داخل دکمه‌ها */
-.mySwiper .swiper-button-next::after,
-.mySwiper .swiper-button-prev::after {
-  font-size: 16px;
-  /* اندازه آیکون */
-  color: white;
-  /* رنگ آیکون */
-}
-
-
-
-.swiper-wrapper {
-  margin-bottom: 15px
-    /*توپکی پایین کارت*/
-}
-
-
-.bg-circle {
-  background-image: url("./assets/circle.svg");
-  background-repeat: no-repeat;
-  background-size: 320px;
-  z-index: 2000;
-  background-position: left bottom;
-  background-position-x: -200px;
-}
-
-.bg-square {
-  background-image: url("./assets/square.svg");
-  background-repeat: no-repeat;
-  background-size: 180px;
-  z-index: 2000;
-  background-position: right;
-  background-position-x: 1400px;
-}
-
 @font-face {
   font-family: "Vazir";
   src: url("/public/fonts/Vazir.woff2") format("woff2"),
@@ -94,8 +14,21 @@ body {
   font-family: "Vazir", sans-serif;
 }
 
-.header {
-  padding: 15px;
-  background-image: url("./assets/header.svg");
+.swiper-pagination-bullet {
+  background-color: white !important;
+  width: 12px !important;
+  height: 12px !important;
+  margin: 0 5px !important;
+  opacity: 0.5 !important;
+  transition: all 0.3s ease-in-out;
+}
 
+.swiper-pagination-bullet-active {
+  background-color: red !important;
+  opacity: 1 !important;
+  transform: scale(1.2);
+}
+.swiper-pagination {
+  margin-top: 4px !important;
+  position: relative !important;
 }
