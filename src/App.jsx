@@ -1,17 +1,20 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router";
-import CompanyRed from "./components/CompanyRed";
-import ProductPage from "./components/PDP";
-import SuccessPage from "./components/success";
+import Header from "./components/Header";
+import DedicatedPlan from "./components/DedicatedPlan";
+import VolumePlan from "./components/VolumePlan";
+import Feature from "./components/Feature";
 function App() {
   return (
     <>
-      <Router>
+      {/* <Router>
         <Routes>
-          <Route path="/" element={<CompanyRed />} />
-          <Route path="/PDP" element={<ProductPage />} />
-          <Route path="/Success" element={<SuccessPage />} />
+          <Route path="/" element={<Header />} />
         </Routes>
-      </Router>
+      </Router> */}
+      <Header />
+      <DedicatedPlan />
+      <VolumePlan />
+      <Feature />
     </>
   );
 }
