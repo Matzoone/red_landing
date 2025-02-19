@@ -45,13 +45,13 @@ const DedicatedPlan = () => {
               خرید پلن یک ماهه
             </button>
             <div className="mt-4 flex items-center gap-1">
-              <spظan className="text-gray-400">●</spظan>
+              <span className="text-gray-400">●</span>
               <div className="flex-1 h-px bg-gray-400"></div>
               <span className="text-gray-300 font-medium px-1">
                 ویژگی های پلن
               </span>
               <div className="flex-1 h-px bg-gray-400"></div>
-              <spظan className="text-gray-400">●</spظan>
+              <span className="text-gray-400">●</span>
             </div>
             <div className="mt-4 text-gray-300 text-sm leading-10 text-start">
               <p>سرورهای متعدد (۳)</p>
@@ -93,13 +93,13 @@ const DedicatedPlan = () => {
                   خرید پلن یک ماهه
                 </button>
                 <div className="mt-4 flex items-center gap-1">
-                  <spظan className="text-gray-400">●</spظan>
+                  <span className="text-gray-400">●</span>
                   <div className="flex-1 h-px bg-gray-400"></div>
                   <span className="text-gray-300 font-medium px-1">
                     ویژگی های پلن
                   </span>
                   <div className="flex-1 h-px bg-gray-400"></div>
-                  <spظan className="text-gray-400">●</spظan>
+                  <span className="text-gray-400">●</span>
                 </div>
                 <div className="mt-4 text-gray-300 text-sm leading-8 text-start">
                   <p>سرورهای متعدد (۳)</p>
