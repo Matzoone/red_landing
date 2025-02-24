@@ -1,8 +1,7 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router";
 import Header from "./components/Header";
-import DedicatedPlan from "./components/DedicatedPlan";
-import VolumePlan from "./components/VolumePlan";
-import Feature from "./components/Feature";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
 function App() {
   return (
     <>
@@ -12,9 +11,8 @@ function App() {
         </Routes>
       </Router> */}
       <Header />
-      <DedicatedPlan />
-      <VolumePlan />
-      <Feature />
+      <Main />
+      <Footer />
     </>
   );
 }

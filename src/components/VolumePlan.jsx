@@ -23,8 +23,6 @@ const VolumePlan = () => {
         بدون قطعی لذت ببرید.
       </p>
       <h2 className="mt-16 text-xl font-semibold">پلن‌های حجمی v2ray </h2>
-      {/* <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mt-10"></div> */}
-
       <div className="w-full mt-10 px-10">
         <Swiper
           breakpoints={{

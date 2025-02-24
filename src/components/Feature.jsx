@@ -1,56 +1,64 @@
-import close from "../assets/close.svg";
+import { useState, useEffect } from "react";
+import Frame from "../assets/Frame.svg";
+import { BsPersonCheckFill } from "react-icons/bs";
+
+const features = [
+  {
+    title: "پشتیبانی ۲۴ ساعته و حرفه‌ای",
+    text: "تیم پشتیبانی ما به صورت ۲۴ ساعته و در تمامی روزهای هفته در دسترس است تا به هر سؤال، نگرانی یا مشکلی که دارید پاسخ دهد.",
+  },
+  {
+    title: "امنیت پیشرفته و مطمئن",
+    text: "با رمزگذاری قدرتمند، اطلاعات شما از حملات سایبری و تهدیدات آنلاین محافظت می‌شود تا با امنیت خاطر از اینترنت آزاد استفاده کنید.",
+  },
+  {
+    title: "دسترسی نامحدود و آزاد",
+    text: "بدون هیچ محدودیتی به تمامی محتواها، سرویس‌های جهانی و شبکه‌های اجتماعی دسترسی داشته باشید.",
+  },
+  {
+    title: "سرعت بی‌نظیر و پایدار",
+    text: "تجربه‌ای با سرعت فوق‌العاده برای مرور وب، دانلود فایل‌ها، و استریم ویدیوهای با کیفیت عالی و اتصال پایدار.",
+  },
+];
 
 const Feature = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
   return (
     <div
-      className="w-full flex flex-wrap gap-6 bg-gray-950 py-20 max-md:hidden"
+      className="w-full bg-gray-950 px-20 py-40 max-md:px-12  leading-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
       style={{
-        backgroundImage: `url(${close})`,
+        backgroundImage: window.innerWidth >= 640 ? `url(${Frame})` : "none",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        backgroundSize: "70%",
+        backgroundSize: "contain",
       }}
     >
-      <div className="w-full flex justify-around py-4">
-        <div className="w-2/8 p-8 bg-gray-300/10 backdrop-blur-xs rounded-lg leading-9">
-          <p className="text-center text-gray-50 text-xl leading-loose">12</p>
-          <p className="text-center text-gray-50 text-xl leading-loose">
-            سرور فعال در کشور های متفاوت{" "}
-          </p>
-        </div>
-        <div className="w-2/8 p-8 bg-gray-300/10 backdrop-blur-xs rounded-lg leading-9">
-          <p className="text-center text-gray-50 text-xl leading-loose">12</p>
-          <p className="text-center text-gray-50 text-xl leading-loose">
-            پشتیبانی 24 ساعته در 7 روز هفته
-          </p>
-        </div>
-      </div>
-
-      <div className="w-full flex justify-center">
-        <div className="w-2/8 p-8 bg-gray-300/10 backdrop-blur-xs rounded-lg leading-9">
-          <p className="text-center text-gray-50 text-xl leading-loose">
-            34r1324r1
-          </p>
-          <p className="text-center text-gray-50 text-xl leading-loose">
-            کاربر فعال در اقصا نقاط جهان
-          </p>
-        </div>
-      </div>
-
-      <div className="w-full flex justify-around py-4 ">
-        <div className="w-2/8 p-8 bg-gray-300/10 backdrop-blur-xs rounded-lg leading-9">
-          <p className="text-center text-gray-50 text-xl leading-loose">12</p>
-          <p className="text-center text-gray-50 text-xl leading-loose">
-            رمز گذاری پیشرفته برای امنیت بیشتر{" "}
-          </p>
-        </div>
-        <div className="w-2/8 p-8 bg-gray-300/10 backdrop-blur-xs rounded-lg leading-9">
-          <p className="text-center text-gray-50 text-xl leading-loose">12</p>
-          <p className="text-center text-gray-50 text-xl leading-loose">
-            تجربه در زمینه عبور از فیلترینگ{" "}
-          </p>
-        </div>
-      </div>
+      {features
+        .slice(0, isMobile ? 2 : features.length)
+        .map((feature, index) => (
+          <div
+            key={index}
+            className="bg-gray-800 text-gray-50 rounded-lg p-6 flex flex-col items-start h-full max-md:w-full"
+          >
+            <div className="p-4 bg-gray-900 rounded-full flex justify-start">
+              <BsPersonCheckFill size={22} />
+            </div>
+            <p className="text-xl font-bold pt-6 pb-4">{feature.title}</p>
+            <p className="flex-grow">{feature.text}</p>
+          </div>
+        ))}
     </div>
   );
 };
